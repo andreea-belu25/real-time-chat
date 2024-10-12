@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Chat</title>
+        <!-- Link to external CSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h1>Chat Application</h1>
+            </div>
+
+            <!-- Username input -->
+            <div id = "username-container">
+                <input type="text" id="input-username" placeholder="Enter your username">
+                <button id="send-username-btn">Join Chat</button>
+            </div>
+
+            <!-- Online Users Section -->
+            <div id="users-container" class="users-container" style="overflow-y: auto; height: 300px;">
+                <div id="users"></div>
+            </div>
+
+            <!-- Messages Container with 5 hardcoded messages -->
+            <div id="messages"></div>
+
+            <!-- Input and Send Button for messages should initially be hidden-->
+            <div class="chat-input" id = "chat-input" style = "display: none;">
+                <textarea id="input-msg" placeholder="Type your message here"></textarea>
+                <button id="send-msg-btn">Send</button>
+            </div>
+        </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.0/sockjs.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

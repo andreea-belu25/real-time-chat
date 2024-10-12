@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    overflow: auto; /* Prevent content from overflowing outside */
+}
+
+.users-container {
+    width: 250px; /* Adjust the width as needed */
+    background-color: #f0f0f0;
+    border-right: 1px solid #ddd;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 100vh; /* Set max height to the full viewport height */
+}
+
+.conversation-container {
+    flex: 1; /* Take the remaining space */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+#messages {
+    flex: 1; /* Take up available space */
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    max-height: calc(100vh - 100px); /* Ensure messages container can scroll, adjust height if necessary */
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    flex-shrink: 0; /* Prevents the chat input from shrinking */
+}
+
+textarea {
+    flex: 1; /* Textarea takes up available space */
+    resize: none; /* Prevent resizing */
+    margin-right: 10px; /* Space between textarea and button */
+}
+
+button {
+    padding: 10px;
+}

@@ -16,36 +16,36 @@ Utility:
 
 Development:
 ---
-static:
-  index.html:
+- static:
+  - index.html:
     - HTML structure representing the front-end for the real-time chat application
     - Users can enter their username to join the chat
     - Displays list of all online users
     - Enables communication through chat box
 
-  script.js:
+  - script.js:
     - Enables real-time messaging through WebSockets, managed by a STOMP client
     - Dynamically updates messages and user lists with every event
 
-  style.css:
+  - style.css:
     - Provides functional layout with different sections for online users and messages
     - Includes scrolling bars for easy navigation between messages and online users
     - Features dynamic layout that adapts to different screen sizes
 
-src/chat:
-  ChatController.java:
+- src/chat:
+  - ChatController.java:
     - Notifies all users via /topic/messages WebSocket topic when a user sends a message
     - Notifies all users via /topic/users WebSocket topic when a user logs in or logs out
     - Updates online user lists accordingly
     - Allows users to retrieve previously sent messages via /previous-messages HTTP endpoint when they join
 
-  Main.java:
+  - Main.java:
     - Entry point of the application
 
-  Message.java:
+  - Message.java:
     - Class designed to handle messages between users
 
-  WebSocketConfig.java:
+  - WebSocketConfig.java:
     - Enables WebSocket communication with STOMP protocol through configuration
     - Message transmission:
       - Messages sent to server start with /app and are routed to methods annotated with @MessageMapping
@@ -53,7 +53,7 @@ src/chat:
       - Clients subscribed to those topics receive the messages
       - SockJS Fallback: If WebSocket is not supported, SockJS is used as fallback
 
-  WebSocketEvents.java - Connection handling:
+  - WebSocketEvents.java - Connection handling:
     - handleConnect() method adds users to online list and broadcasts updated list when user connects
     - handleDisconnect() method removes users from list and broadcasts updated list when user disconnects
     - broadcastOnlineUsers() method ensures all clients receive real-time updates about online users via /topic/users topic

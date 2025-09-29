@@ -63,7 +63,6 @@ public class ChatTests extends SpringTest {
                 new BrowserType
                         .LaunchOptions()
                         .setHeadless(false)
-//                        .setSlowMo(15)
                         .setTimeout(1000 * 120));
     }
 
@@ -92,7 +91,6 @@ public class ChatTests extends SpringTest {
     }
 
     // Tests
-
     @DynamicTest
     DynamicTesting[] dt = new DynamicTesting[]{
 

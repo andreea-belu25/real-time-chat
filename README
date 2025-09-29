@@ -3,9 +3,9 @@ Tools: Java, JavaScript, CSS, HTML
 Motivation: After completing my first project using Spring Boot, I was eager to learn even more things about this framework and how could it be
 used to create more complex applications.
 
-Utility: I developed a real-time chat application featuring an input field, send button, and message display area. The group chat functionality
+Utility: I developed a real-time chat application featuring an input field, send button and message display area. The group chat functionality
 was built using WebSockets and the STOMP protocol. Additionally, I implemented a basic login system, enhanced the message format to include the
-sender's name and timestamp, and introduced a new section that displays a list of currently active users.
+sender's name and timestamp and introduced a new section that displays a list of currently active users.
 
 Development:
     static:
@@ -32,8 +32,8 @@ Development:
 
         WebSocketConfig.java - here is where the WebSocket communication with STOMP protocol is enabled through configuration;
                 Message transmission:
-                    -> Messages sent to the server will start with /app, and they will be routed to methods annotated with @MessageMapping.
-                    -> The server broadcasts messages to topics prefixed with /topic, and clients subscribed to those topics will receive the messages.
+                    -> Messages sent to the server will start with /app and they will be routed to methods annotated with @MessageMapping.
+                    -> The server broadcasts messages to topics prefixed with /topic and clients subscribed to those topics will receive the messages.
                     -> SockJS Fallback: If WebSocket is not supported by the client or the server, SockJS will be used as a fallback to ensure communication works.
 
         WebSocketEvents.java - connection handling
